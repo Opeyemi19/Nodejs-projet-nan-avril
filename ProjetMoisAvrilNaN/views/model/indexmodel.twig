@@ -1,0 +1,41 @@
+{% extends 'layout.twig' %}
+
+
+{% block body %}
+<section class="imgformModel">
+    <div class="container" style="">
+        <h3>Le client a la possibilite de contacter un constructeur en cliquant sur le bouton et un email lui sera envoyé</h3>
+    {% for item in condb %}
+        <div class="card m-5 index1form animated zoomIn">
+            <div class="row no-gutters">
+                <div class="col-md-2 mx-auto">
+                    <h6 class="m-4">Modele de maison</h6>
+                    <h5 class="card-title text-center m-2">{{ item.Nom_maison }}</h5> 
+                    <img src="../../../uploads/{{item.Image1}}" class="card-img m-2" alt="..." style="width:150px; height:150px;">
+                    {# <h5 class="card-title text-center mt-2">{{ item.Nom_constructeur }}</h5>             #}
+                    {# <img src="../../../uploads/{{item.LogoConstr1}}" class="card-img m-2" alt="..."> #}
+                </div>          
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <div class="d-flex">
+                            <h5 class="card-title mr-4">Superficie: {{ item.Superficie_maison }} m2</h5>
+                            <h5 class="card-title mr-4">Nombre Chambres: {{ item.Nbre_chambres }}</h5>
+                            <h5 class="card-title mr-4">Prix: {{ item.Prix}} Fcfa</h5>
+                            {# <h5 class="card-title mr-auto">Nombre Chambres: {{ item.Nbre_Agence }}</h5> #}
+                            {# <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p> #}
+                            {# <p class="card-text"><small class="text-muted">{{ item.Localisation }}</small></p> #}
+                        </div>
+                        <div class="d-flex">
+                            <img src="../../../uploads/{{item.Image2}}" class="card-img m-2" alt="..." style="width:200px; height:150px;">
+                            <img src="../../../uploads/{{item.Image3}}" class="card-img m-2" alt="..." style="width:200px; height:150px;">
+                        </div>
+                        <a class="btn btn-premium" href="/modele/formulaimodel/{{item.id}}" role="button" style="color:white"><i class="fa fa-font-awesome mr-2"></i>Infos sur les modeles</a>
+                    </div>          
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+</div>
+</section>
+
+{% endblock %}

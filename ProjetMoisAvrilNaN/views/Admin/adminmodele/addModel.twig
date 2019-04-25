@@ -1,0 +1,64 @@
+{% extends 'Admin/layoutAdmin.twig' %}
+
+
+{% block body %}
+<section class="adminbagr" style="">
+<div class="container p-4">
+    <div class="row">
+        <div class="col-md-6 mx-auto">
+            {% if errors  %}
+                <div class="alert alert-danger">
+                    <ul>
+                        {% for element in errors %}
+                        <li>{{element.msg}}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            {% endif %}
+            <div class="card formConstr animated fadeInDown">
+                <div class="card-body">
+                    <h2 class="text-center">Formulaire Ajout de Modele</h2>
+                    <form action="" method="post" enctype="multipart/form-data">
+                        <div class="form-group">
+                            <label>Nom Maison</label>
+                            <input type="text" name="Nom_maison" value="{{AddModel.Nom_maison}}" class="form-control" autofocus>
+                        </div>
+                        <div class="form-group">
+                            <label>Superficie Maison</label>
+                            <input type="text" name="Superficie_maison" value="{{AddModel.Superficie_maison}}" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label>Nombre de Chambre</label>
+                            <input name="Nbre_chambres" type="text" value="{{AddModel.Nbre_chambres}}" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label>Image Maison</label>
+                            <input name="Image1" type="file" class="form-control-file">
+                        </div>
+                        <div class="form-group">
+                            <label>Image Maison</label>
+                            <input name="Image2" type="file" class="form-control-file">
+                        </div>
+                        <div class="form-group">
+                            <label>Image Maison</label>
+                            <input name="Image3" type="file" class="form-control-file">
+                        </div>
+                        <div class="form-group">
+                            <label>Description Maison</label>
+                            <textarea name="Description" cols="30" rows="3" class="form-control">{{AddModel.Description}}</textarea>
+                        </div>
+                        <div class="form-group">
+                            <label>Prix Maison</label>
+                            <input name="Prix" type="text" value="{{AddModel.Nom_maison}}" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-outline-success form-control">Save</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</section>
+{% endblock %}

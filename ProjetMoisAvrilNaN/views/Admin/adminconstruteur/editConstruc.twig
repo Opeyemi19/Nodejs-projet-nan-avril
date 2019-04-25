@@ -1,0 +1,41 @@
+{% extends 'Admin/layoutAdmin.twig' %}
+
+
+{% block body %}
+<section style=" background-image: url('../../../img/imgdash.jpg'); background-position: center center; background-repeat: no-repeat; background-size: cover;">
+    <div class="container-fluid p-4">
+        <div class="row">
+            <div class="col-md-2 col-sm-4 col-xs-12 col-12">
+                {# <button type="button" class="btn btn-warning nav-item nav-link"><a href="/Admins/constructeur/addConstruc">Ajouter Constructeur</a></button> #}
+            </div>
+            <div class="col-md-6 col-sm-8 col-xs-12 col-12 mx-auto">
+                <div class="card animated fadeInDown" style="background: rgba(0, 0, 0, 0.8);">
+                    <div class="card-body">
+                    <form action="/Admins/constructeur/editConstru/{{lin.id}}" method="post" enctype="multipart/form-data">
+                            <h2><span class="text-white text-center">Formulaire Modification Constructeur</span></h2>
+                        <div class="form-group">
+                            <input type="text" name="Nom_constructeur" id="" placeholder="Nom constrcteur" value="{{lin.Nom_constructeur}} {{newAdd.Nom_constructeur}}" class="form-control" autofocus>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="Localisation" id="" placeholder="Localisation du constructeur" class="form-control" value="{{lin.Localisation}} {{newAdd.Localisation}}">
+                        </div>
+                        <div class="form-group">
+                            <textarea name="description" id="" cols="30" rows="3" class="form-control" placeholder="Description">{{lin.description}} {{newAdd.description}}</textarea>
+                        </div>
+                        <div class="form-group">
+                            <input name="date_Creat_Constr" type="text" class="form-control" placeholder="Date de Creaction Ex: 2002-04-05" value="{{lin.date_Creat_Constr}} {{newAdd.date_Creat_Constr}}">
+                        </div>
+                        <div class="form-group">
+                            <input name="Nbre_Agence" type="text" class="form-control" placeholder="Nombre Agence" value="{{lin.Nbre_Agence}} {{newAdd.Nbre_Agence}}">
+                        </div>
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-outline-success form-control">Save</button>
+                        </div>
+                    </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

@@ -1,0 +1,33 @@
+{% extends 'layout.twig' %}
+
+
+{% block body %}
+<section class="imgformConst">
+<div class="container" style="">
+<h3>Le client a la possibilite de contacter un constructeur en cliquant sur le bouton et un email lui sera envoyé</h3>
+    {% for item in condb %}
+        <div class="card m-5 index1form animated zoomIn" style="">
+            <div class="row no-gutters">
+                <div class="col-md-2 mx-auto">
+                    <h5 class="card-title text-center mt-2">{{ item.Nom_constructeur }}</h5>            
+                    <img src="../../../uploads/{{item.LogoConstr1}}" class="card-img m-2" alt="..."style="width:130px; height:130px">
+                </div>          
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <h5 class="card-title">Nombre Agences: {{ item.Nbre_Agence }}</h5>
+                        <p class="card-text"><small class="text-white">{{ item.Localisation }}</small></p>
+                        <p class="card-text"><small class="text-white">{{ item.description }}</small></p>
+                        <div class="d-flex">
+                            <img src="../../../uploads/{{item.imageConstr1}}" class="card-img m-2" alt="..." style="width:200px; height:160px">
+                            <img src="../../../uploads/{{item.imageConstr2}}" class="card-img m-2" alt="..." style="width:200px; height:160px">
+                            <img src="../../../uploads/{{item.imageConstr3}}" class="card-img m-2" alt="..." style="width:200px; height:160px">
+                        </div>
+                        <a class="btn btn-premium" href="/constructeur/formulairconstruteu/{{item.id}}" role="button"><i class="fa fa-font-awesome mr-2"></i>Contacter un constructeur</a>
+                    </div>          
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+</div>
+</section>
+{% endblock %}

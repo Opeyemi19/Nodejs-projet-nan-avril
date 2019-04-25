@@ -1,0 +1,73 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+    <a class="navbar-brand" href="/">RikBoul</a>
+        
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav mx-auto">
+                {% if user %}
+
+                        <li class="nav-item active p-2">
+                            <a href="/" class="nav-link">Home</a>
+                        </li>
+                        <li class="nav-item p-2">
+                            <a href="/constructeur" class="nav-link">Constructeurs</a>
+                        </li>
+                        <li class="nav-item p-2">
+                            <a href="/modele" class="nav-link">Modeles Maison</a>
+                        </li> 
+                        <li class="nav-item p-2">
+                            <a href="/construction" class="nav-link">Construire</a>
+                        </li>
+                        <li class="nav-item p-2">
+                            <a href="/financier" class="nav-link">Financier</a>
+                        </li>
+                        <li class="nav-item p-2">
+                            <a href="/projet" class="nav-link">Projet Construction</a>
+                        </li>
+                        {% if user.statut == 1 %}
+                         <li class="nav-item p-2">
+                            <a href="/Admins/modele" class="nav-link">Administracteur</a>
+                        </li>
+                        {% endif %}
+                        <li class="nav-item p-2">
+                            <a href="/Sign/logout" class="nav-link">Déconnexion</a>
+                        </li>
+                {% else %}
+                        <li class="nav-item active p-2">
+                            <a href="/" class="nav-link">Home</a>
+                        </li>
+                        <li class="nav-item p-2">
+                            <a href="/constructeur" class="nav-link">Constructeurs</a>
+                        </li>
+
+                        <li class="nav-item p-2">
+                            <a href="/modele" class="nav-link">Modeles Maison</a>
+                        </li> 
+                        <li class="nav-item p-2">
+                            <a href="/construction" class="nav-link">Construire</a>
+                        </li>
+                        <li class="nav-item p-2">
+                            <a href="/financier" class="nav-link">Financier</a>
+                        </li>
+                        <li class="nav-item p-2">
+                            <a href="/projet" class="nav-link">Projet Construction</a>
+                        </li>
+                        <li class="nav-item dropdown p-2">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Sign
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                <a class="dropdown-item" href="/Sign/signup">SignUp</a>
+                                <a class="dropdown-item" href="/Sign/signin">SignIn</a>
+                            </div>
+                        </li>   
+                {% endif %}
+            </ul>
+        </div>
+    </div>
+</nav>
+

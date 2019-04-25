@@ -1,0 +1,50 @@
+{% extends 'Admin/layoutAdmin.twig' %}
+
+
+{% block body %}
+<section class="adminbagr" style="">
+    <div class="container-fluid p-4">
+    <div class="row">
+        <div class="col-md-2 col-sm-4 col-xs-12 col-12">
+            {# <button type="button" class="btn btn-outline-primary"><a href="/Admins/constructeur/addConstruc" class="nav-link">Ajouter Constructeur</a></button> #}
+            {# <button type="button" class="btn btn-outline-warning btn-block"><a class="nav-link" href="#">Modifier Constructeur</a></button>
+            <button type="button" class="btn btn-outline-danger btn-block"><a class="nav-link" href="#"></a>Supprimer Constructeur</button> #}
+        </div>
+        <div class="col-md-10 col-sm-8 col-xs-12 col-12">
+            <table class="table table-striped table-bordered">
+                <thead>
+                    <tr>
+                        <th>Nom et Prénom</th>
+                        <th>Telephone</th>
+                        <th>Email</th>
+                        <th>Lieu habitation</th>
+                        <th>Nom Modele</th>
+                        <th>Date Envoi</th>
+                        <th>Outils</th>
+                    </tr>
+                </thead>
+                {% for data in infos %}
+                    <tbody>
+                        <tr>
+                            <td>{{data.FullName}}</td>
+                            <td>{{data.Telephone}}</td>
+                            <td>{{data.Email}}</td>
+                            <td>{{data.Lieu_habitation}}</td>  
+                            <td>{{data.Nom_maison}}</td>  
+                            <td>{{data.created_at}}</td>  
+                            <td>
+                                {# <div class="d-flex"> #}
+                                    {# <a href="/Admins/constructeur/editConstru/{{data.id}}" class="btn btn-outline-secondary mr-2">Edit</a>  #}
+                                    <a href="/Admins/infos/delete/{{data.id}}" class="btn btn-outline-danger">Delete</a> 
+                                {# </div>   #}
+                            </td>                  
+                        </tr>
+                    </tbody>
+                {% endfor %}
+            </table>
+        </div>
+
+    </div>
+</div>
+</section>
+{% endblock %}
